@@ -1,9 +1,13 @@
-.admin-form{
-    width: 450px;
-    margin: auto;
-    margin-top: 2rem;
+.main {
+  min-height: 72vh;
 }
 
-.main{
-    min-height: 70vh;
+.admin-form {
+  width: 450px;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.sidebar ul li {
+  line-height: 2rem;
 }
