@@ -13,6 +13,8 @@ import { PrivateRoute } from "./components/private-route/PrivateRoute";
 import Books from "./pages/books/Books";
 import History from "./pages/history/History";
 import Clients from "./pages/clients/Clients";
+import NewBook from "./pages/books/NewBook";
+import EditBook from "./pages/books/EditBook";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +54,22 @@ function App() {
           element={
             <PrivateRoute>
               <Books />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="new-book"
+          element={
+            <PrivateRoute>
+              <NewBook />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="edit-book/:id"
+          element={
+            <PrivateRoute>
+              <EditBook />
             </PrivateRoute>
           }
         />
