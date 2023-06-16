@@ -25,6 +25,7 @@ const addNewBookAction = (bookObj) => async(dispatch)=> {
 }
 export const updateBookAction = ({id, ...rest}) => async(dispatch)=> {
  try {
+    console.log(id, rest)
     //add new document in the database
    await setDoc(doc(db, "books"), rest, {merge: true})
    
@@ -75,5 +76,6 @@ export const getBookAction = (id) => async dispatch =>{
         console.log(error)
     }
 }
+
 
 export default addNewBookAction

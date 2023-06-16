@@ -11,16 +11,22 @@ import { useDispatch } from "react-redux";
 import { getUserAction } from "./pages/user/userAction";
 import { PrivateRoute } from "./components/private-route/PrivateRoute";
 import Books from "./pages/books/Books";
-import History from "./pages/history/History";
 import Clients from "./pages/clients/Clients";
 import NewBook from "./pages/books/NewBook";
 import EditBook from "./pages/books/EditBook";
+import { useEffect } from "react";
+import { getAllBookAction } from "./pages/books/BookAction";
+import BookLanding from "./pages/books/BookLanding";
+import BurrowHistory from "./pages/burrowHistory/BurrowHistory";
 
 function App() {
   const dispatch = useDispatch();
   onAuthStateChanged(auth, (user) => {
     user?.uid && dispatch(getUserAction(user.uid));
   });
+  useEffect(() =>{
+    dispatch(getAllBookAction())
+  }, [dispatch])
   return (
     <div className="">
       <Routes>
@@ -28,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/signin" element={<Login />} />
+        <Route path="/book/:id" element={<BookLanding />} />
 
         {/* private routers */}
 
@@ -78,7 +85,7 @@ function App() {
           path="history"
           element={
             <PrivateRoute>
-              <History />
+              <BurrowHistory />
             </PrivateRoute>
           }
         />

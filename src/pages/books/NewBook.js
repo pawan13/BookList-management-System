@@ -47,7 +47,7 @@ const dispatch = useDispatch()
         },
         {
           lable: "Imge url",
-          name: " url",
+          name: "url",
           type: "url",
           placeholder: "http://",
           required: true,

@@ -1,19 +1,23 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap'
+import {  Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const customCard = () => {
+const customCard = ({id, title, name, year, url}) => {
   return (
+    <Link to={`/book/${id}`} className="nav-link">
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={url} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <p>
+          {name} -{year}
+        </p>
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        
       </Card.Body>
     </Card>
+    </Link>
   )
 }
 

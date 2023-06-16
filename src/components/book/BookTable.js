@@ -51,7 +51,7 @@ const BookTable = () => {
 
              </td>
             <td>
-                <Link to={`/edit-book/:${item.id}`}>
+                <Link to={`/edit-book/${item.id}`}>
                 <Button variant='warning'>Edit</Button>
                 </Link>
             </td>
